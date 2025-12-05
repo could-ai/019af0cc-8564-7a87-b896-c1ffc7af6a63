@@ -74,8 +74,8 @@ class _CreateContractScreenState extends State<CreateContractScreen> {
                           filled: true,
                           fillColor: Colors.white,
                         ),
-                        items: _service.areas.map((area) {
-                          return DropdownMenuItem(
+                        items: _service.areas.map<DropdownMenuItem<Area>>((Area area) {
+                          return DropdownMenuItem<Area>(
                             value: area,
                             child: Text('${area.codigoArea} - ${area.descripcion}'),
                           );
@@ -101,8 +101,8 @@ class _CreateContractScreenState extends State<CreateContractScreen> {
                         ),
                         items: _selectedArea == null 
                             ? [] 
-                            : _service.getPositionsByArea(_selectedArea!.codigoArea).map((pos) {
-                                return DropdownMenuItem(
+                            : _service.getPositionsByArea(_selectedArea!.codigoArea).map<DropdownMenuItem<Position>>((Position pos) {
+                                return DropdownMenuItem<Position>(
                                   value: pos,
                                   child: Text('${pos.codigoPosicion} - ${pos.descripcion}'),
                                 );

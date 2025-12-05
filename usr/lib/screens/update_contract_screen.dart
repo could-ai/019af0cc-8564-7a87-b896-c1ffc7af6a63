@@ -56,8 +56,8 @@ class _UpdateContractScreenState extends State<UpdateContractScreen> {
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.search),
                   ),
-                  items: contracts.map((c) {
-                    return DropdownMenuItem(
+                  items: contracts.map<DropdownMenuItem<String>>((Contract c) {
+                    return DropdownMenuItem<String>(
                       value: c.codigoVacante,
                       child: Text('${c.codigoVacante} - Area: ${c.codigoArea}'),
                     );
